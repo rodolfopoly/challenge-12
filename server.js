@@ -15,10 +15,10 @@ const connection = mysql.createConnection(
 connection.connect(function (err) {
     if (err) throw err;
     console.log(`Connected to the employees_db database.`);
-    start();
+    firstPrompt();
 })
 
-function start() {
+function firstPrompt() {
     inquirer.prompt({
         type: 'list',
         choices: [
@@ -67,7 +67,7 @@ function viewAllDepartments() {
     connection.query(query, function (err, res) {
         if (err) throw err;
         console.table(res);
-        start();
+        firstPrompt();
     });
 }
 
@@ -76,7 +76,7 @@ function viewAllRoles() {
     connection.query(query, function (err, res) {
         if (err) throw err;
         console.table(res);
-        start();
+        firstPrompt();
     });
 }
 
@@ -85,7 +85,7 @@ function viewAllEmployees() {
     connection.query(query, function (err, res) {
         if (err) throw err;
         console.table(res);
-        start();
+        firstPrompt();
     });
 }
 
@@ -100,7 +100,7 @@ function addADepartment() {
         connection.query(query, [answer.departmentName], function (err, res) {
             if (err) throw err;
             console.table(res);
-            start();
+            firstPrompt();
         });
     });
 }
@@ -128,7 +128,7 @@ function addARole() {
         connection.query(query, [roleName, salary, department], function (err, res) {
             if (err) throw err;
             console.table(res);
-            start();
+            firstPrompt();
         });
     });
 }
@@ -161,7 +161,7 @@ function addAEmployee() {
         connection.query(query, [firstName, lastName, role, manager], function (err, res) {
             if (err) throw err;
             console.table(res);
-            start();
+            firstPrompt();
         });
     });
 }
@@ -184,7 +184,7 @@ function updateAnEmployeeRole() {
         connection.query(query, [role, name], function(err, res){
             if(err) throw err;
             console.table(answer);
-            start();
+            firstPrompt();
         })
     })
 }
