@@ -1,5 +1,5 @@
-const cTable = require('console.table');
 const inquirer = require('inquirer');
+const cTable = require('console.table');
 const mysql = require('mysql2');
 
 const connection = mysql.createConnection(
@@ -50,7 +50,7 @@ function firstPrompt() {
             case 'add a role':
                 addARole();
                 break;
-            case 'add a employee':
+            case 'add an employee':
                 addAEmployee();
                 break;
             case 'update an employee role':
@@ -72,7 +72,7 @@ function viewAllDepartments() {
 }
 
 function viewAllRoles() {
-    let query = 'Select * FROM role';
+    let query = 'Select * FROM roles';
     connection.query(query, function (err, res) {
         if (err) throw err;
         console.table(res);
@@ -81,7 +81,7 @@ function viewAllRoles() {
 }
 
 function viewAllEmployees() {
-    let query = 'Select * FROM employee';
+    let query = 'Select * FROM employees';
     connection.query(query, function (err, res) {
         if (err) throw err;
         console.table(res);
@@ -106,7 +106,7 @@ function addADepartment() {
 }
 
 function addARole() {
-    let query = 'INSERT INTO role(title, salary, department_id) VALUES (?, ?, ?)'
+    let query = 'INSERT INTO roles(title, salary, department_id) VALUES (?, ?, ?)'
 
     inquirer.prompt([{
         type: 'input',
@@ -134,7 +134,7 @@ function addARole() {
 }
 
 function addAEmployee() {
-    let query = 'INSERT INTO employee(first_name, last_name , role_id, manager_id) VALUES (?, ?, ?, ?)';
+    let query = 'INSERT INTO employees(first_name, last_name , role_id, manager_id) VALUES (?, ?, ?, ?)';
 
     inquirer.prompt([{
         type: 'input',
@@ -167,7 +167,7 @@ function addAEmployee() {
 }
 
 function updateAnEmployeeRole() {
-    let query = 'UPDATE employee SET role_id=? WHERE first_name= ?';
+    let query = 'UPDATE employees SET role_id=? WHERE first_name= ?';
 
     inquirer.prompt([{
         type: 'input',

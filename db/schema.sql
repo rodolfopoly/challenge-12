@@ -9,15 +9,15 @@ CREATE TABLE department (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE role (
+CREATE TABLE roles (
     id INTEGER NOT NULL AUTO_INCREMENT,
-    tite VARCHAR(45) NULL,
+    title VARCHAR(45) NULL,
     salary DECIMAL NULL,
     department_id INTEGER NULL,
     PRIMARY KEY (id)
 );
 
-CREATE TABLE employee (
+CREATE TABLE employees (
     id INTEGER NOT NULL AUTO_INCREMENT,
     first_name VARCHAR(45) NULL,
     last_name VARCHAR(45) NULL,
