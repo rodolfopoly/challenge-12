@@ -1,7 +1,8 @@
 # [Video Demo](https://drive.google.com/file/d/1TppVVBG0Uybr4eZXBZg-umrikugIUOaX/view)
   
   # Screenshot
-  
+  <img width="1157" alt="Screen Shot 2022-06-09 at 8 14 17 PM" src="https://user-images.githubusercontent.com/98934009/172965833-75b48644-9dca-43e1-be6c-2ad6ded26161.png">
+
 
   
   # Employee Tracker 
